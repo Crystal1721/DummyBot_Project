@@ -44,9 +44,14 @@ typedef struct {
     float y_EE;
     float z_EE;
 
+    float target_x_EE;
+    float target_y_EE;
+    float target_z_EE;
+
     float x_EE_FK;
     float y_EE_FK;
-    float z_EE_FK;   
+    float z_EE_FK;  
+     
 
 } RRR_Bot_t;
 
@@ -55,7 +60,7 @@ extern RRR_Bot_t Dummy_bot;
 void RRR_Bot_Init (RRR_Bot_t * Dummy_bot, float init_q1, float init_q2, float init_q3);
 void updateJointAngles (RRR_Bot_t * Dummy_bot, float q1, float q2, float q3);
 int checkErrorJointLimits (RRR_Bot_t * Dummy_bot, float q1, float q2, float q3);
-void q3CalcLimits(RRR_Bot_t * Dummy_bot);
+void q3CalcLimits(RRR_Bot_t * Dummy_bot, float q2);
 void map_kinematicsToServoAngles(RRR_Bot_t * Dummy_bot);
 
 #endif /* INC_RRR_BOT_H__ */

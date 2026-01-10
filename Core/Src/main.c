@@ -37,6 +37,7 @@
 #include "Inverse_Kinematics.h"
 #include "Forward_Kinematics.h"
 #include "RRR_Bot.h"
+#include "user_lib.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -57,9 +58,7 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-Servo_t Servo1, Servo2, Servo3;
-Suction_t Suction1;
-RRR_Bot_t Dummy_bot;
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/

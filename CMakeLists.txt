@@ -52,6 +52,7 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     Bsp/Bsp_usart.c
     Bsp/Bsp_pwm.c
     Bsp/Bsp_vofa.c
+    Bsp/Bsp_EXTI.c
 
     Hardware/HIPNUC_IMU/hipnuc_ch0x0.c
     Hardware/HIPNUC_IMU/hipnuc_dec.c
@@ -65,6 +66,7 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     Algorithm/Forward_Kinematics.c
     Algorithm/Inverse_Kinematics.c
     Algorithm/RRR_Bot.c
+    Algorithm/user_lib.c
 )
 
 # Add include paths

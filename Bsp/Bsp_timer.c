@@ -10,6 +10,7 @@
 #include "PWM_Servo.h"
 #include "PWM_Suction.h"
 #include "tim.h"
+#include "user_lib.h"
 
 void BSP_Timer_Init(void){
 
@@ -33,14 +34,17 @@ void BSP_Timer_Handler(TIM_HandleTypeDef *htim){
 			led = 0;
 		}
 
+		ramp_calc(&ramp_q1);
+		ramp_calc(&ramp_q2);
+		ramp_calc(&ramp_q3);
 	}
 	else if(htim->Instance == TIM9) // 5ms
 	{
 		static uint8_t led = 0;
 		if (++led >= 4) {
-			BSP_LED_Toggle(LED1);
-			BSP_LED_Toggle(LED2);
-			BSP_LED_Toggle(LED3);
+			// BSP_LED_Toggle(LED1);
+			// BSP_LED_Toggle(LED2);
+			// BSP_LED_Toggle(LED3);
 			led = 0;
 		}
 

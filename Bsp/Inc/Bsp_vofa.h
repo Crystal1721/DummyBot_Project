@@ -7,7 +7,7 @@
 #define byte2(dw_temp)     (*((char*)(&dw_temp) + 2))
 #define byte3(dw_temp)     (*((char*)(&dw_temp) + 3))
 
-#define USE_USB_VOFA 0 //1: USB 0: UART
+#define USE_USB_VOFA 1 //1: USB 0: UART
 
 void vofa_start(void);
 void vofa_send_data(uint8_t num, float data); 
