@@ -59,6 +59,7 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
 
     Hardware/PWM_Servo/PWM_Servo.c
     Hardware/PWM_Suction/PWM_Suction.c
+    Hardware/Joystick/DualSense.c
 
     Task/Main_Task.c
     Task/Vofa_Task.c
@@ -78,6 +79,7 @@ target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
     Hardware/HIPNUC_IMU
     Hardware/PWM_Servo
     Hardware/PWM_Suction
+    Hardware/Joystick
     Algorithm/Inc
 )
 

@@ -11,6 +11,7 @@
 #include "PWM_Suction.h"
 #include "tim.h"
 #include "user_lib.h"
+#include "RRR_Bot.h"
 
 void BSP_Timer_Init(void){
 
@@ -33,10 +34,11 @@ void BSP_Timer_Handler(TIM_HandleTypeDef *htim){
 			BSP_LED_Toggle(LED4);
 			led = 0;
 		}
+	    if(Dummy_bot.auto_mode == 0)
+		{
+		update_target_position(&Dummy_bot);
+		}
 
-		ramp_calc(&ramp_q1);
-		ramp_calc(&ramp_q2);
-		ramp_calc(&ramp_q3);
 	}
 	else if(htim->Instance == TIM9) // 5ms
 	{

@@ -1,5 +1,6 @@
 #include "Bsp_usart.h"
 #include "hipnuc_ch0x0.h"
+#include "RRR_Bot.h"
 
 uint8_t USART1_RxBuffer[USART1_RxBufferSize];
 
@@ -57,6 +58,7 @@ void BSP_USART_IDLE_DMA_INIT(UART_HandleTypeDef *huart)
             HAL_UARTEx_ReceiveToIdle_DMA(&huart1, USART1_RxBuffer, sizeof(USART1_RxBuffer));
             if (huart->hdmarx != NULL)
             {
+                parse_joystickInput(&Dummy_bot, USART1_RxBuffer);
                 __HAL_DMA_DISABLE_IT(huart->hdmarx, DMA_IT_HT);
             }
         }

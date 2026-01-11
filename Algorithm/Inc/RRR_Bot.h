@@ -2,8 +2,29 @@
 #define INC_RRR_BOT_H__
 
 #include "stdint.h"
+#include <string.h>
+#include <stdlib.h>
+#include <stdio.h>
+
+
+#define DT     0.005f      // 20ms
+#define SPEED  50.0f      // mm/s
+#define DEAD   0.05f
+
 
 typedef struct {
+
+    uint8_t Dummy_bot_Buffer[256];
+
+    float joy_x;
+    float joy_y;
+    float joy_z;
+
+} Position_t;
+
+typedef struct {
+
+    uint8_t auto_mode;
 
     float temp_current_q1;
     float temp_current_q2;
@@ -52,8 +73,13 @@ typedef struct {
     float y_EE_FK;
     float z_EE_FK;  
      
+    Position_t joy;
+
+    uint8_t suction_on;
+
 
 } RRR_Bot_t;
+
 
 extern RRR_Bot_t Dummy_bot;
 
@@ -62,5 +88,9 @@ void updateJointAngles (RRR_Bot_t * Dummy_bot, float q1, float q2, float q3);
 int checkErrorJointLimits (RRR_Bot_t * Dummy_bot, float q1, float q2, float q3);
 void q3CalcLimits(RRR_Bot_t * Dummy_bot, float q2);
 void map_kinematicsToServoAngles(RRR_Bot_t * Dummy_bot);
+void parse_joystickInput(RRR_Bot_t * Dummy_bot, uint8_t* input_buffer);
+
+static float deadzone(float v);
+void update_target_position(RRR_Bot_t *bot);
 
 #endif /* INC_RRR_BOT_H__ */

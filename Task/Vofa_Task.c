@@ -29,10 +29,11 @@ void StartVofaTask(void const * argument)
     vofa_send_data(6, Dummy_bot.x_EE_FK);
     vofa_send_data(7, Dummy_bot.y_EE_FK);
     vofa_send_data(8, Dummy_bot.z_EE_FK);
+    vofa_send_data(9, Dummy_bot.x_EE);
+    vofa_send_data(10, Dummy_bot.y_EE);
+    vofa_send_data(11, Dummy_bot.z_EE);
 
-    vofa_send_data(9, Servo1.Servo_PWM);
-    vofa_send_data(10, Servo2.Servo_PWM);
-    vofa_send_data(11, Servo3.Servo_PWM);
+
     // Call the function to send the frame tail
     vofa_sendframetail();
 
