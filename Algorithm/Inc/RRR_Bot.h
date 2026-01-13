@@ -8,7 +8,7 @@
 
 
 #define DT     0.005f      // 20ms
-#define SPEED  50.0f      // mm/s
+#define SPEED  100.0f      // mm/s
 #define DEAD   0.05f
 
 
@@ -25,6 +25,9 @@ typedef struct {
 typedef struct {
 
     uint8_t auto_mode;
+    uint8_t rst;
+    uint8_t detect_colour;
+    uint8_t start_detect;
 
     float temp_current_q1;
     float temp_current_q2;

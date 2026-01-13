@@ -47,77 +47,111 @@ void StartMainTask(void *argument)
   for(;;)
   {
 
-    if(Dummy_bot.auto_mode)
+    if(Dummy_bot.auto_mode  && Dummy_bot.start_detect)
     {
-      switch (test_auto)
+      if(Dummy_bot.detect_colour == 1)
       {
-      case 0:
-      // original position
-        Dummy_bot.x_EE = 239.47f;
-        Dummy_bot.y_EE = -16.68f;
-        Dummy_bot.z_EE = 210.74f;
-
-        osDelay(3000);
-        test_auto = 1;
-        /* code */
-        break;
-      
-      case 1:
-      //  pick position
-        Dummy_bot.x_EE = 250.0f;
-        Dummy_bot.y_EE = 0.0f;
-        Dummy_bot.z_EE = 90.0f;  
-        osDelay(3000);
-        test_auto = 2;
-        break;
-      case 2:
-      // place position A
-        Dummy_bot.x_EE = 250.0f;
-        Dummy_bot.y_EE = -170.0f;
-        Dummy_bot.z_EE = 85.0f;
-
-        osDelay(3000);
-        test_auto = 3;
-        break;
-      case 3:
+        switch (test_auto)
+        {
+        case 0:
         // original position
-        Dummy_bot.x_EE = 239.47f;
-        Dummy_bot.y_EE = -16.68f;
-        Dummy_bot.z_EE = 210.74f;
-        osDelay(3000);
-        test_auto = 4;
-        break;
-      case 4:
-      //  pick position
-        Dummy_bot.x_EE = 250.0f;
-        Dummy_bot.y_EE = 0.0f;
-        Dummy_bot.z_EE = 90.0f;  
-        osDelay(3000);
-        test_auto = 5;
-        break;
-      case 5:
-        // place position B
-        Dummy_bot.x_EE = 250.0f;
-        Dummy_bot.y_EE = 170.0f;
-        Dummy_bot.z_EE = 85.0f;
-        osDelay(3000);
-        test_auto = 6;
-        break;
-      case 6:
-        // original position
-        Dummy_bot.x_EE = 239.47f;
-        Dummy_bot.y_EE = -16.68f;
-        Dummy_bot.z_EE = 210.74f;
-        osDelay(3000);
-        test_auto = 99;
-        break;
+          Dummy_bot.x_EE = 239.47f;
+          Dummy_bot.y_EE = -16.68f;
+          Dummy_bot.z_EE = 210.74f;
 
-      default:
-        break;
+          osDelay(2000);
+          test_auto = 1;
+          /* code */
+          break;
+        
+        case 1:
+        //  pick position
+          Dummy_bot.x_EE = 250.0f;
+          Dummy_bot.y_EE = 0.0f;
+          Dummy_bot.z_EE = 90.0f;  
+          Set_PWM(&Suction1, 1650);
+          osDelay(2000);
+          test_auto = 2;
+          break;
+        case 2:
+        // place position A
+          Set_PWM(&Suction1, 1650);
+          Dummy_bot.x_EE = 250.0f;
+          Dummy_bot.y_EE = -150.0f;
+          Dummy_bot.z_EE = 110.0f;
+
+          Set_PWM(&Suction1, 1650);
+          osDelay(2000);
+          test_auto = 3;
+          break;
+          case 3:
+          // original position
+          Set_PWM(&Suction1, 500);
+          Dummy_bot.x_EE = 239.47f;
+          Dummy_bot.y_EE = -16.68f;
+          Dummy_bot.z_EE = 210.74f;
+          osDelay(5200);
+          Set_PWM(&Suction1, 500);
+          test_auto = 07;
+          break;
+      }
+    } else if(Dummy_bot.detect_colour == 2)
+    {
+        switch (test_auto)
+        {
+          case 0:
+          // original position
+            Dummy_bot.x_EE = 239.47f;
+            Dummy_bot.y_EE = -16.68f;
+            Dummy_bot.z_EE = 210.74f;
+
+            osDelay(2000);
+            test_auto = 1;
+            /* code */
+            break;
+          
+          case 1:
+          //  pick position
+            Dummy_bot.x_EE = 250.0f;
+            Dummy_bot.y_EE = 0.0f;
+            Dummy_bot.z_EE = 90.0f;  
+            Set_PWM(&Suction1, 1650);
+            osDelay(2000);
+            test_auto = 2;
+            break;
+          case 2:
+            // place position B
+            Set_PWM(&Suction1, 1650);
+            Dummy_bot.x_EE = 250.0f;
+            Dummy_bot.y_EE = 170.0f;
+            Dummy_bot.z_EE = 110.0f;
+            Set_PWM(&Suction1, 1650);
+            osDelay(2000);
+            test_auto = 3;
+            break;
+            case 3:
+            // original position
+            Set_PWM(&Suction1, 500);
+            Dummy_bot.x_EE = 239.47f;
+            Dummy_bot.y_EE = -16.68f;
+            Dummy_bot.z_EE = 210.74f;
+            osDelay(5200);
+            Set_PWM(&Suction1, 500);
+            test_auto = 17;
+            break;       
+        }
       }
         // In auto mode, the target positions are pre-defined
     } else {
       test_auto = 0;
+    }
+
+    if(Dummy_bot.rst)
+    {
+        Dummy_bot.x_EE = 239.47f;
+        Dummy_bot.y_EE = -16.68f;
+        Dummy_bot.z_EE = 210.74f;
+        Dummy_bot.rst = 0;
     }
 
 

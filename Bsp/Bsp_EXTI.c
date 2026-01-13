@@ -46,7 +46,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 
             // place position A
             Dummy_bot.x_EE = 250.0f;
-            Dummy_bot.y_EE = -170.0f;
+            Dummy_bot.y_EE = -150.0f;
             Dummy_bot.z_EE = 85.0f;
 
 
