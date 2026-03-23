@@ -20,9 +20,9 @@ Python project for camera/image processing and object color tracking used in the
 python Dummy.py
 ```
 
-## External Dependency
+## External Dependency (Dualsense controller PS5)
 
-This project uses code/resources from:
+This project uses resources from:
 
 - https://github.com/yesbotics/dualsense-controller-python.git
 
