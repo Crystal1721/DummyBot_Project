@@ -4,7 +4,7 @@
 
 ## Project Overview
 Dummy Bot is a 3DOF robotic arm platform developed as an integrated mechatronics project.
-The system combines embedded control, inverse/forward kinematics, and image processing (using YOLOv12) for pick-and-place style tasks.
+The system combines embedded control with RTOS system, inverse/forward kinematics, and image processing (using YOLOv12) for pick-and-place style tasks.
 
 Dummy Bot supports two operation modes:
 - `Manual mode`: movement is controlled in real time using a DualSense joystick.
@@ -20,7 +20,7 @@ This repository is organized into two core parts:
 
 ## System Highlights
 - 3DOF robotic arm kinematic control.
-- Embedded firmware running on STM32 mainboard.
+- Embedded firmware for an STM32 mainboard utilizing a Real-Time Operating System (RTOS)
 - Computer-vision module for object/color detection with YOLOv12.
 - Dual operation modes: manual joystick control and automatic color sorting.
 - Modular project split between control firmware and high-level image processing.
