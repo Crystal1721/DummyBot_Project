@@ -64,6 +64,9 @@ cmake --build DummyBot_mainboard_vs/build
 ```bash
 python DummyBot_img_processing/Dummy.py
 ```
+## PCB 
+<img width="2160" height="1967" alt="3D_PCB1_2026-03-24" src="https://github.com/user-attachments/assets/003d3328-ed9a-41f9-b7ee-ea6dec033929" />
+<img width="419" height="490" alt="Screenshot from 2026-03-23 23-59-18" src="https://github.com/user-attachments/assets/b52f14a4-56b0-4344-8685-2177649981b2" />
 
 ## Dependency Note
 The image-processing/control integration references:
@@ -72,4 +75,3 @@ The image-processing/control integration references:
 ## Documentation
 - Project document: `Docs/Dummy bot.pdf`
 - PCB Schematic: `Docs/Mainboard_F4_Schematic.pdf`
-- PCB 3D File: `Docs/Mainboard_F4_3D.step`
