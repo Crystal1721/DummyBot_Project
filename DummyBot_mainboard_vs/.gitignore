@@ -1,0 +1,15 @@
+build/
+Debug/
+Release/
+
+# STM32CubeIDE local metadata
+mx.scratch
+
+# Keep shared settings tracked
+!.settings/
+
+# Common temporary files
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
