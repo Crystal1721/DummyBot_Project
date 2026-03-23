@@ -72,3 +72,4 @@ The image-processing/control integration references:
 ## Documentation
 - Project document: `Docs/Dummy bot.pdf`
 - PCB Schematic: `Docs/Mainboard_F4_Schematic.pdf`
+- PCB 3D File: `Docs/Mainboard_F4_3D.step`
